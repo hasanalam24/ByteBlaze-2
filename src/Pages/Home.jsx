@@ -1,11 +1,10 @@
+import Heros from "../Components/Heros";
 
 
 const Home = () => {
     return (
-        <div>
-
-
-            <h1>Homepage</h1>
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-284px)]">
+            <Heros></Heros>
         </div>
     );
 };
