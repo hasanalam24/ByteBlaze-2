@@ -26,18 +26,18 @@ const Navbar = () => {
         <div>
             <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
                 <div className="flex-1 ">
-                    <a className="btn gap-0 btn-ghost text-2xl text-secondary ">Byte<span className='text-primary'>Blaze</span></a>
+                    <Link to="/" className="btn gap-0 btn-ghost text-2xl text-secondary ">Byte<span className='text-primary'>Blaze</span></Link>
                 </div>
                 <div className="flex-none">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 hidden sm:flex gap-5 items-center">
                         <Link to="/" className='font-bold'>
-                            <a>Home</a>
+                            Home
                         </Link>
                         <Link to="/blogs" className='font-bold text-primary'>
-                            <a>Blogs</a>
+                            Blogs
                         </Link>
-                        <li className='font-bold'>
-                            <a>Bookmarks</a>
+                        <li className='font-bold mr-5'>
+                            Bookmarks
                         </li>
 
                     </ul>
