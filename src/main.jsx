@@ -9,22 +9,30 @@ import {
 import Home from './Pages/Home.jsx';
 import Blogs from './Pages/Blogs.jsx';
 import Bookmarks from './Pages/Bookmarks.jsx';
+import MainLayout from './Layouts/MainLayout.jsx';
 
 const router = createBrowserRouter([
   {
     //eta hocce search thikana url name
     path: "/",
-    element: <Home></Home>,
-  },
-  {
-    path: '/blogs',
-    element: <Blogs></Blogs>
+    element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: '/blogs',
+        element: <Blogs></Blogs>
+      },
+
+      {
+        path: '/bookmarks',
+        element: <Bookmarks></Bookmarks>
+      }
+    ]
   },
 
-  {
-    path: '/bookmarks',
-    element: <Bookmarks></Bookmarks>
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
