@@ -1,6 +1,27 @@
-import React from 'react';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
+
+    // const [theme, setTheme] = useState('light')
+
+    // useEffect(() => {
+    //     localStorage.setItem('theme', theme)
+    //     const localTheme = localStorage.getItem('theme')
+    //     document.querySelector('html').setAttribute('data-theme', localTheme)
+    // }, [])
+
+
+    // const handleToggle = e => {
+    //     if (e.target.checked) {
+    //         setTheme('synthwave')
+    //     }
+    //     else {
+    //         setTheme('light')
+    //     }
+    // }
+
     return (
         <div>
             <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
@@ -9,12 +30,12 @@ const Navbar = () => {
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">
-                        <li className='font-bold'>
+                        <Link to="/" className='font-bold'>
                             <a>Home</a>
-                        </li>
-                        <li className='font-bold text-primary'>
+                        </Link>
+                        <Link to="/blogs" className='font-bold text-primary'>
                             <a>Blogs</a>
-                        </li>
+                        </Link>
                         <li className='font-bold'>
                             <a>Bookmarks</a>
                         </li>
