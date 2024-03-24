@@ -1,11 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import BlogCard from "../Components/BlogCard";
+import { useState } from "react";
 
 
 const Blogs = () => {
 
     const blogs = useLoaderData()
-    console.log(blogs)
+    // console.log(blogs)
+
 
     return (
         <section className="dark:bg-gray-100 py-6 dark:text-gray-800">
