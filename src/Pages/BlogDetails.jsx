@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, Outlet, useLoaderData, useNavigation } from "react-router-dom";
-
+import { BsBookmarkStarFill } from "react-icons/bs";
+import { saveBlogs } from "../Utilites";
 
 
 const BlogDetails = () => {
@@ -9,6 +10,11 @@ const BlogDetails = () => {
     const { comments_count, title, reading_time_minutes, positive_reactions_count, published_at, tags } = details
     const [tabIndex, setTabIndex] = useState(0)
 
+
+    const handleBookmarks = (info) => {
+        // console.log(info)
+        saveBlogs(info)
+    }
 
     return (
         <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
@@ -55,7 +61,10 @@ const BlogDetails = () => {
                         </Link>
 
                         {/* bookmark btn add */}
+                        <div onClick={() => handleBookmarks(details)}>
+                            <BsBookmarkStarFill className="text-2xl ml-5 text-secondary hover:opacity-75 cursor-pointer hover:scale-110"></BsBookmarkStarFill>
 
+                        </div>
 
                     </div>
 
