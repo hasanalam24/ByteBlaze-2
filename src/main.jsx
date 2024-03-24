@@ -10,6 +10,7 @@ import Home from './Pages/Home.jsx';
 import Blogs from './Pages/Blogs.jsx';
 import Bookmarks from './Pages/Bookmarks.jsx';
 import MainLayout from './Layouts/MainLayout.jsx';
+import BlogDetails from './Pages/BlogDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,9 +24,14 @@ const router = createBrowserRouter([
       },
       {
         path: '/blogs',
-        element: <Blogs></Blogs>
+        element: <Blogs></Blogs>,
+        loader: () => fetch('https://dev.to/api/articles?per_page=20&top=7')
       },
-
+      {
+        path: '/blog/:khujo',
+        element: <BlogDetails></BlogDetails>,
+        loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.khujo}`)
+      },
       {
         path: '/bookmarks',
         element: <Bookmarks></Bookmarks>
