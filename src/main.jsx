@@ -6,40 +6,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Home from './Pages/Home.jsx';
-import Blogs from './Pages/Blogs.jsx';
-import Bookmarks from './Pages/Bookmarks.jsx';
-import MainLayout from './Layouts/MainLayout.jsx';
-import BlogDetails from './Pages/BlogDetails.jsx';
+import { router } from './Routes/Routes.jsx';
 
-const router = createBrowserRouter([
-  {
-    //eta hocce search thikana url name
-    path: "/",
-    element: <MainLayout></MainLayout>,
-    children: [
-      {
-        path: '/',
-        element: <Home></Home>
-      },
-      {
-        path: '/blogs',
-        element: <Blogs></Blogs>,
-        loader: () => fetch('https://dev.to/api/articles?per_page=20&top=7')
-      },
-      {
-        path: '/blog/:khujo',
-        element: <BlogDetails></BlogDetails>,
-        loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.khujo}`)
-      },
-      {
-        path: '/bookmarks',
-        element: <Bookmarks></Bookmarks>
-      }
-    ]
-  },
 
-]);
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

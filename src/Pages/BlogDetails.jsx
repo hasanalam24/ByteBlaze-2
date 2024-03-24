@@ -52,6 +52,7 @@ const BlogDetails = () => {
                         </Link>
 
 
+
                     </div>
 
                     {/* tabs end */}
