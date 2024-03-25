@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import placeHolderImage from '../assets/404.jpg'
 
-const BlogCard = ({ blog }) => {
+const BlogCard = ({ blog, deletable }) => {
     const { title, cover_image, description, published_at, id } = blog
     return (
         <div>
@@ -15,6 +15,9 @@ const BlogCard = ({ blog }) => {
                     <p>{description}</p>
                 </div>
             </Link>
+            {
+                deletable && <div>Delete</div>
+            }
         </div>
     );
 };
