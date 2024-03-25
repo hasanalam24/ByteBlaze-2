@@ -1,9 +1,10 @@
-import { ScaleLoader } from "react-spinners";
+import { RiseLoader } from "react-spinners";
 
 const Loader = () => {
     return (
         <div className="flex flex-col justify-center items-center min-h-[calc(100vh-284px)]">
-            <ScaleLoader size={100} color="#f92fd3"></ScaleLoader>
+            <RiseLoader
+                className="text-2xl" color="#f92fd3"></RiseLoader>
         </div>
     );
 };
