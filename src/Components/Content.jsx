@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import placeHolderImage from '../assets/404.jpg'
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -7,7 +7,7 @@ const Content = () => {
 
     const contentInfo = useLoaderData()
 
-    const { title, cover_image, description, published_at, tags, body_html } = contentInfo
+    const { title, cover_image, description, published_at, tags, body_html, url } = contentInfo
     return (
 
         <div
@@ -28,7 +28,10 @@ const Content = () => {
             }
 
             <div>
-                <h2 className="text-3xl font-bold mb-5">{title}</h2>
+                <a
+                    href={url}
+                    target="_blank"
+                    className="text-3xl font-bold mb-5 hover:underline">{title}</a>
                 <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
             </div>
         </div>
